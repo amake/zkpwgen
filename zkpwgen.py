@@ -30,28 +30,45 @@ def maybe():
 
 def generate(length, hira=True, kata=True, num=True, upper=True, lower=True):
     accum = []
+    did_hira = False
+    did_kata = False
+    did_num = False
+    did_upper = False
+    did_lower = False
     while True:
         if hira:
             accum.append(choose(hiragana))
+            did_hira = True
         if len(accum) >= length:
             break
         if kata:
             accum.append(choose(katakana))
+            did_kata = True
         if len(accum) >= length:
             break
         if num and maybe():
             accum.append(choose(numbers))
+            did_num = True
         if len(accum) >= length:
             break
         if upper and maybe():
             accum.append(choose(letters_upper))
+            did_upper = True
         if len(accum) >= length:
             break
         if lower and maybe():
             accum.append(choose(letters_lower))
+            did_lower = True
         if len(accum) >= length:
             break
-    return ''.join(accum)
+    if all([did_hira == hira,
+            did_kata == kata,
+            did_num == num,
+            did_upper == upper,
+            did_lower == lower]):
+        return ''.join(accum)
+    else:
+        return generate(length, hira=hira, kata=kata, num=num, upper=upper, lower=lower)
 
 
 def main():
