@@ -29,6 +29,9 @@ def maybe():
 
 
 def generate(length, hira=True, kata=True, num=True, upper=True, lower=True):
+    if length < [hira, kata, num, upper, lower].count(True):
+        raise ValueError(
+            'Password of length %d cannot meet requirements' % length)
     accum = []
     did_hira = False
     did_kata = False
