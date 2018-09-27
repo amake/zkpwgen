@@ -5,7 +5,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{19, 96}, {150, 32}}",
+        "frame" : "{{16, 104}, {150, 32}}",
         "class" : "Label",
         "attributes" : {
           "name" : "NumbersLabel",
@@ -23,7 +23,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{252, 97}, {51, 31}}",
+        "frame" : "{{253, 104}, {51, 31}}",
         "class" : "Switch",
         "attributes" : {
           "action" : "set_numbers",
@@ -40,7 +40,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{19, 54}, {78, 34}}",
+        "frame" : "{{16, 64}, {80, 32}}",
         "class" : "Label",
         "attributes" : {
           "flex" : "",
@@ -59,7 +59,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{19, 136}, {150, 32}}",
+        "frame" : "{{16, 144}, {150, 32}}",
         "class" : "Label",
         "attributes" : {
           "flex" : "",
@@ -78,7 +78,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{252, 136}, {51, 31}}",
+        "frame" : "{{253, 143}, {51, 31}}",
         "class" : "Switch",
         "attributes" : {
           "action" : "set_letters",
@@ -95,7 +95,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{19, 6}, {284, 40}}",
+        "frame" : "{{16, 16}, {288, 40}}",
         "class" : "TextField",
         "attributes" : {
           "flex" : "W",
@@ -116,7 +116,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{102, 217}, {100, 32}}",
+        "frame" : "{{112, 224}, {96, 32}}",
         "class" : "Button",
         "attributes" : {
           "flex" : "LR",
@@ -134,7 +134,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{271, 54}, {32, 34}}",
+        "frame" : "{{262, 64}, {42, 32}}",
         "class" : "Label",
         "attributes" : {
           "flex" : "L",
@@ -143,7 +143,7 @@
           "uuid" : "0FB5482C-4FF8-4416-973B-E1EC676D01D8",
           "class" : "Label",
           "alignment" : "right",
-          "text" : "0",
+          "text" : "000",
           "name" : "LengthValueLabel",
           "font_name" : "Courier"
         },
@@ -153,7 +153,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{19, 176}, {150, 32}}",
+        "frame" : "{{16, 184}, {150, 32}}",
         "class" : "Label",
         "attributes" : {
           "flex" : "",
@@ -172,7 +172,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{252, 175}, {51, 31}}",
+        "frame" : "{{253, 182}, {51, 31}}",
         "class" : "Switch",
         "attributes" : {
           "action" : "set_secure",
@@ -189,7 +189,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{193, 54}, {60, 34}}",
+        "frame" : "{{192, 64}, {48, 32}}",
         "class" : "Button",
         "attributes" : {
           "action" : "increment_length",
@@ -207,7 +207,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{125, 54}, {60, 34}}",
+        "frame" : "{{128, 64}, {48, 32}}",
         "class" : "Button",
         "attributes" : {
           "action" : "decrement_length",
@@ -222,13 +222,13 @@
         "selected" : false
       }
     ],
-    "frame" : "{{0, 0}, {320, 255}}",
+    "frame" : "{{0, 0}, {320, 266}}",
     "class" : "View",
     "attributes" : {
-      "name" : "ZkpwgenView",
-      "enabled" : true,
       "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "enabled" : true,
       "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "name" : "ZkpwgenView",
       "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
       "flex" : ""
     },
