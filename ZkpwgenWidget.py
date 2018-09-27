@@ -44,8 +44,11 @@ def set_letters(sender):
 
 
 def set_secure(sender):
-    global secure
+    global secure, letters, numbers
     secure = sender.value
+    if secure:
+        letters = True
+        numbers = True
     update_view(sender.superview)
 
 
