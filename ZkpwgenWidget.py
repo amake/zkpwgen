@@ -74,9 +74,9 @@ def update_view(view):
     view['SecureSwitch'].value = secure
     view['LengthSlider'].value = length_percent
     pw_len = round(length_percent * length_max)
-    view['LengthValueLabel'].value = str(pw_len)
+    view['LengthValueLabel'].text = str(pw_len)
     pw = generate(pw_len)
-    view['PasswordField'].value = pw
+    view['PasswordField'].text = pw
     clipboard.set(pw)
 
 
