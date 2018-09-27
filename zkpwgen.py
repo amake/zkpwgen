@@ -92,7 +92,8 @@ def main():
         term_cols, _ = shutil.get_terminal_size((80, 20))
     except AttributeError:
         term_cols = 80
-    num_cols = 1 if args.one_column else int(term_cols / (args.length * 2 + 1))
+    num_cols = (1 if args.one_column else
+                max(1, int(term_cols / (args.length * 2 + 1))))
     num_pw = (args.count if args.count != -1 else
               1 if args.one_column else num_cols * 20)
     for n in range(num_pw):
