@@ -23,8 +23,8 @@ def copy_model(model=None, **kwargs):
     return ViewModel(**curr_vals)
 
 
-class TextViewDelegate(object):
-    def textview_should_begin_editing(self, textview):
+class TextFieldDelegate(object):
+    def textfield_should_begin_editing(self, textfield):
         return False
 
 
@@ -69,7 +69,7 @@ def set_secure(sender):
 
 def init_view():
     v = ui.load_view(widget_name)
-    v['PasswordField'].delegate = TextViewDelegate()
+    v['PasswordField'].delegate = TextFieldDelegate
     update_view(v, current_model)
     return v
 
