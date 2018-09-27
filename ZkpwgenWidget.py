@@ -22,11 +22,13 @@ def regen(sender):
 
 
 def set_length(sender):
+    global length_percent
     length_percent = sender.value
     update_view(sender.superview)
 
 
 def set_numbers(sender):
+    global numbers, secure
     numbers = sender.value
     if not numbers:
         secure = False
@@ -34,6 +36,7 @@ def set_numbers(sender):
 
 
 def set_letters(sender):
+    global letters, secure
     letters = sender.value
     if not letters:
         secure = False
@@ -41,6 +44,7 @@ def set_letters(sender):
 
 
 def set_secure(sender):
+    global secure
     secure = sender.value
     update_view(sender.superview)
 
