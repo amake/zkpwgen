@@ -24,7 +24,7 @@ def copy_model(model=None, **kwargs):
 
 
 def regen(sender):
-    update_view(sender.superview)
+    update_view(sender.superview, current_model)
 
 
 def increment_length(sender):
