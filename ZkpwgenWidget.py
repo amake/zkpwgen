@@ -24,7 +24,7 @@ def copy_model(model=None, **kwargs):
 
 
 class TextFieldDelegate(object):
-    def textfield_should_begin_editing(self, textfield):
+    def textfield_should_begin_editing(self):
         return False
 
 
