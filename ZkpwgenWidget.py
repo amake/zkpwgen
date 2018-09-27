@@ -4,6 +4,7 @@ from collections import namedtuple
 import appex
 import ui
 import os
+import json
 import random
 import clipboard
 import zkpwgen
@@ -13,6 +14,14 @@ widget_name = 'ZkpwgenView'
 ViewModel = namedtuple('ViewModel', ['length', 'letters', 'numbers', 'secure'])
 
 current_model = ViewModel(8, True, True, False)
+
+settings_file = '.ZkpwgenWidget.txt'
+
+try:
+    with open(settings_file) as f:
+        current_model = ViewModel(**json.load(f))
+except:
+    pass
 
 
 def copy_model(model=None, **kwargs):
@@ -100,10 +109,16 @@ def update_view(view, model):
         view['LengthValueLabel'].text = str(model.length)
         view['PasswordField'].text = pw
         clipboard.set(pw)
-        global current_model
-        current_model = model
+        persist_model(model)
     except:
         update_view(view, current_model)
+
+
+def persist_model(model):
+    global current_model
+    current_model = model
+    with open(settings_file, 'w') as f:
+        json.dump(model._asdict(), f)
 
 
 def main():
