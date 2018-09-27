@@ -28,6 +28,18 @@ def maybe():
     return random.randint(0, 9) < 3
 
 
+def generate_simple(length, letters=True, numerals=True, secure=False):
+    hira = secure or bool(random.getrandbits(1))
+    upper = secure or (letters and bool(random.getrandbits(1)))
+    lower = secure or (letters and not upper)
+    return generate(length,
+                    hira=hira,
+                    kata=secure or not hira,
+                    num=secure or numerals,
+                    upper=upper,
+                    lower=lower)
+
+
 def generate(length, hira=True, kata=True, num=True, upper=True, lower=True):
     if length < [hira, kata, num, upper, lower].count(True):
         raise ValueError(
@@ -100,16 +112,10 @@ def main():
     num_pw = (args.count if args.count != -1 else
               1 if args.one_column else num_cols * 20)
     for n in range(num_pw):
-        hira = args.secure or bool(random.getrandbits(1))
-        upper = args.secure or (
-            not args.no_letters and bool(random.getrandbits(1)))
-        lower = args.secure or (not args.no_letters and not upper)
-        pw = generate(args.length,
-                      hira=hira,
-                      kata=args.secure or not hira,
-                      num=args.secure or not args.no_numerals,
-                      upper=upper,
-                      lower=lower)
+        pw = generate_simple(args.length,
+                             letters=not args.no_letters,
+                             numerals=not args.no_numerals,
+                             secure=args.secure)
         if n % num_cols == num_cols - 1 or n == num_pw - 1:
             print(pw, end='\n')
         else:
