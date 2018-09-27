@@ -1,5 +1,6 @@
 #!python3
 
+from collections import namedtuple
 import appex
 import ui
 import os
@@ -9,10 +10,13 @@ import zkpwgen
 
 widget_name = 'ZkpwgenView'
 
-length = 8
-letters = True
-numbers = True
-secure = False
+ViewModel = namedtuple('ViewModel', ['length', 'letters', 'numbers', 'secure'])
+
+current_model = ViewModel(8, True, True, False)
+
+
+def copy_model():
+    return ViewModel(**current_model._asdict())
 
 
 def regen(sender):
@@ -20,46 +24,45 @@ def regen(sender):
 
 
 def increment_length(sender):
-    global length
-    length += 1
-    update_view(sender.superview)
+    model = copy_model()
+    model.length += 1
+    update_view(sender.superview, model)
 
 
 def decrement_length(sender):
-    global length
-    if length > 1:
-        length -= 1
-        update_view(sender.superview)
+    model = copy_model()
+    model.length -= 1
+    update_view(sender.superview, model)
 
 
 def set_numbers(sender):
-    global numbers, secure
-    numbers = sender.value
-    if not numbers:
-        secure = False
-    update_view(sender.superview)
+    model = copy_model()
+    model.numbers = sender.value
+    if not model.numbers:
+        model.secure = False
+    update_view(sender.superview, model)
 
 
 def set_letters(sender):
-    global letters, secure
-    letters = sender.value
-    if not letters:
-        secure = False
-    update_view(sender.superview)
+    model = copy_model()
+    model.letters = sender.value
+    if not model.letters:
+        model.secure = False
+    update_view(sender.superview, model)
 
 
 def set_secure(sender):
-    global secure, letters, numbers
-    secure = sender.value
-    if secure:
-        letters = True
-        numbers = True
-    update_view(sender.superview)
+    model = copy_model()
+    model.secure = sender.value
+    if model.secure:
+        model.letters = True
+        model.numbers = True
+    update_view(sender.superview, model)
 
 
 def init_view():
     v = ui.load_view(widget_name)
-    update_view(v)
+    update_view(v, current_model)
     return v
 
 
@@ -76,15 +79,28 @@ def generate(length):
                             lower=lower)
 
 
-def update_view(view):
-    view['NumbersSwitch'].value = numbers
-    view['LettersSwitch'].value = letters
-    view['SecureSwitch'].value = secure
-    view['LengthDownButton'].enabled = length > 1
-    view['LengthValueLabel'].text = str(length)
-    pw = generate(length)
-    view['PasswordField'].text = pw
-    clipboard.set(pw)
+def can_generate(length):
+    try:
+        generate(length)
+        return True
+    except:
+        return False
+
+
+def update_view(view, model):
+    try:
+        pw = generate(model.length)
+        view['NumbersSwitch'].value = model.numbers
+        view['LettersSwitch'].value = model.letters
+        view['SecureSwitch'].value = model.secure
+        view['LengthDownButton'].enabled = can_generate(model.length - 1)
+        view['LengthValueLabel'].text = str(model.length)
+        view['PasswordField'].text = pw
+        clipboard.set(pw)
+        global current_model
+        current_model = model
+    except:
+        pass
 
 
 def main():
