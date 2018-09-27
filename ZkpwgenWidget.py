@@ -17,12 +17,6 @@ current_model = ViewModel(8, True, True, False)
 
 settings_file = '.ZkpwgenWidget.txt'
 
-try:
-    with open(settings_file) as f:
-        current_model = ViewModel(**json.load(f))
-except:
-    pass
-
 
 def copy_model(model=None, **kwargs):
     if model is None:
@@ -30,6 +24,14 @@ def copy_model(model=None, **kwargs):
     curr_vals = model._asdict()
     curr_vals.update(kwargs)
     return ViewModel(**curr_vals)
+
+
+try:
+    with open(settings_file) as f:
+        persist_vals = json.load(f)
+        current_model = copy_model(**persist_vals)
+except:
+    pass
 
 
 class TextFieldDelegate(object):
