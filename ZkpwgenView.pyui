@@ -23,24 +23,6 @@
         "nodes" : [
 
         ],
-        "frame" : "{{103, 74}, {160, 34}}",
-        "class" : "Slider",
-        "attributes" : {
-          "action" : "set_length",
-          "flex" : "W",
-          "continuous" : false,
-          "frame" : "{{60, 143}, {200, 34}}",
-          "uuid" : "14E4E96B-5DC2-4D4C-B860-FFC6CDECB7E8",
-          "class" : "Slider",
-          "value" : 0.5,
-          "name" : "LengthSlider"
-        },
-        "selected" : false
-      },
-      {
-        "nodes" : [
-
-        ],
         "frame" : "{{252, 116}, {51, 31}}",
         "class" : "Switch",
         "attributes" : {
@@ -128,7 +110,7 @@
           "name" : "PasswordField",
           "font_name" : "<System>"
         },
-        "selected" : false
+        "selected" : true
       },
       {
         "nodes" : [
@@ -202,16 +184,52 @@
           "name" : "SecureSwitch"
         },
         "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{193, 74}, {60, 34}}",
+        "class" : "Button",
+        "attributes" : {
+          "font_size" : 15,
+          "action" : "increment_length",
+          "frame" : "{{120, 127}, {80, 32}}",
+          "title" : "",
+          "uuid" : "67052E92-BEE1-45C3-881B-3A29AD1B0A97",
+          "class" : "Button",
+          "name" : "LengthUpButton",
+          "image_name" : "iob:ios7_plus_outline_32"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{125, 74}, {60, 34}}",
+        "class" : "Button",
+        "attributes" : {
+          "action" : "decrement_length",
+          "image_name" : "iob:ios7_minus_outline_32",
+          "frame" : "{{120, 127}, {80, 32}}",
+          "title" : "",
+          "uuid" : "67052E92-BEE1-45C3-881B-3A29AD1B0A97",
+          "class" : "Button",
+          "font_size" : 15,
+          "name" : "LengthDownButton"
+        },
+        "selected" : false
       }
     ],
     "frame" : "{{0, 0}, {320, 285}}",
     "class" : "View",
     "attributes" : {
-      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
-      "enabled" : true,
-      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
       "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "enabled" : true,
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
       "name" : "ZkpwgenView",
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
       "flex" : ""
     },
     "selected" : false

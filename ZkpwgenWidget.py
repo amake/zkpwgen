@@ -9,9 +9,7 @@ import zkpwgen
 
 widget_name = 'ZkpwgenView'
 
-length_max = 20
-
-length_percent = 8 / length_max
+length = 8
 letters = True
 numbers = True
 secure = False
@@ -21,10 +19,16 @@ def regen(sender):
     update_view(sender.superview)
 
 
-def set_length(sender):
-    global length_percent
-    if round(length_percent * length_max) != round(sender.value * length_max):
-        length_percent = sender.value
+def increment_length(sender):
+    global length
+    length += 1
+    update_view(sender.superview)
+
+
+def decrement_length(sender):
+    global length
+    if length > 1:
+        length -= 1
         update_view(sender.superview)
 
 
@@ -76,10 +80,9 @@ def update_view(view):
     view['NumbersSwitch'].value = numbers
     view['LettersSwitch'].value = letters
     view['SecureSwitch'].value = secure
-    view['LengthSlider'].value = length_percent
-    pw_len = round(length_percent * length_max)
-    view['LengthValueLabel'].text = str(pw_len)
-    pw = generate(pw_len)
+    view['LengthDownButton'].enabled = length > 1
+    view['LengthValueLabel'].text = str(length)
+    pw = generate(length)
     view['PasswordField'].text = pw
     clipboard.set(pw)
 
