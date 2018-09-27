@@ -1,0 +1,219 @@
+[
+  {
+    "nodes" : [
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{19, 116}, {150, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "font_size" : 18,
+          "frame" : "{{85, 144}, {150, 32}}",
+          "uuid" : "8018CFA9-6341-46C3-B2A8-2A193E6513EC",
+          "class" : "Label",
+          "alignment" : "left",
+          "text" : "Numbers",
+          "name" : "NumbersLabel",
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{103, 74}, {160, 34}}",
+        "class" : "Slider",
+        "attributes" : {
+          "action" : "set_length",
+          "flex" : "W",
+          "continuous" : false,
+          "frame" : "{{60, 143}, {200, 34}}",
+          "uuid" : "14E4E96B-5DC2-4D4C-B860-FFC6CDECB7E8",
+          "class" : "Slider",
+          "value" : 0.5,
+          "name" : "LengthSlider"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{252, 116}, {51, 31}}",
+        "class" : "Switch",
+        "attributes" : {
+          "action" : "set_numbers",
+          "flex" : "L",
+          "frame" : "{{135, 145}, {51, 31}}",
+          "class" : "Switch",
+          "uuid" : "11620A93-C279-4D93-9AAA-F77724167E06",
+          "value" : true,
+          "name" : "NumbersSwitch"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{19, 74}, {78, 34}}",
+        "class" : "Label",
+        "attributes" : {
+          "flex" : "",
+          "font_size" : 18,
+          "frame" : "{{85, 144}, {150, 32}}",
+          "uuid" : "5DE6DDA1-4384-48C0-8B6C-ADD3164BE915",
+          "class" : "Label",
+          "alignment" : "left",
+          "text" : "Length",
+          "name" : "LengthLabel",
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{19, 156}, {150, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "flex" : "",
+          "font_name" : "<System>",
+          "frame" : "{{85, 144}, {150, 32}}",
+          "uuid" : "8018CFA9-6341-46C3-B2A8-2A193E6513EC",
+          "class" : "Label",
+          "alignment" : "left",
+          "text" : "Letters",
+          "font_size" : 18,
+          "name" : "LettersLabel"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{252, 155}, {51, 31}}",
+        "class" : "Switch",
+        "attributes" : {
+          "action" : "set_letters",
+          "flex" : "L",
+          "frame" : "{{135, 145}, {51, 31}}",
+          "class" : "Switch",
+          "uuid" : "11620A93-C279-4D93-9AAA-F77724167E06",
+          "value" : true,
+          "name" : "LettersSwitch"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{19, 6}, {284, 60}}",
+        "class" : "TextField",
+        "attributes" : {
+          "flex" : "W",
+          "font_size" : 26,
+          "frame" : "{{60, 144}, {200, 32}}",
+          "spellchecking_type" : "no",
+          "class" : "TextField",
+          "uuid" : "84F9DCB0-4E93-47F4-98D7-737F68291DBA",
+          "alignment" : "center",
+          "text" : "あいうえおＡＢ３",
+          "autocorrection_type" : "no",
+          "name" : "PasswordField",
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{125, 247}, {80, 32}}",
+        "class" : "Button",
+        "attributes" : {
+          "flex" : "LR",
+          "action" : "regen",
+          "frame" : "{{120, 144}, {80, 32}}",
+          "title" : "Regenerate",
+          "uuid" : "B1C7921F-1B21-4C07-86ED-24AB21C0BD04",
+          "class" : "Button",
+          "name" : "RegenButton",
+          "font_size" : 15
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{271, 74}, {32, 34}}",
+        "class" : "Label",
+        "attributes" : {
+          "flex" : "L",
+          "name" : "LengthValueLabel",
+          "frame" : "{{85, 114}, {150, 32}}",
+          "uuid" : "0FB5482C-4FF8-4416-973B-E1EC676D01D8",
+          "class" : "Label",
+          "alignment" : "right",
+          "text" : "0",
+          "font_size" : 18,
+          "font_name" : "Courier"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{19, 196}, {150, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "flex" : "",
+          "name" : "SecureLabel",
+          "frame" : "{{85, 144}, {150, 32}}",
+          "uuid" : "8018CFA9-6341-46C3-B2A8-2A193E6513EC",
+          "class" : "Label",
+          "alignment" : "left",
+          "text" : "Secure",
+          "font_size" : 18,
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{252, 194}, {51, 31}}",
+        "class" : "Switch",
+        "attributes" : {
+          "action" : "set_secure",
+          "flex" : "L",
+          "frame" : "{{135, 145}, {51, 31}}",
+          "class" : "Switch",
+          "uuid" : "11620A93-C279-4D93-9AAA-F77724167E06",
+          "value" : false,
+          "name" : "SecureSwitch"
+        },
+        "selected" : false
+      }
+    ],
+    "frame" : "{{0, 0}, {320, 285}}",
+    "class" : "View",
+    "attributes" : {
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "enabled" : true,
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "name" : "ZkpwgenView",
+      "flex" : ""
+    },
+    "selected" : false
+  }
+]
