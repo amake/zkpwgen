@@ -69,7 +69,10 @@ def init_view():
 
 
 def generate(model):
-    return zkpwgen.generate_simple(model.length, **model)
+    return zkpwgen.generate_simple(model.length,
+                                   letters=model.letters,
+                                   numerals=model.numbers,
+                                   secure=model.secure)
 
 
 def can_generate(model):
