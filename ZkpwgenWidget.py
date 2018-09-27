@@ -23,7 +23,7 @@ def regen(sender):
 
 def set_length(sender):
     global length_percent
-    if length_percent != sender.value:
+    if round(length_percent * length_max) != round(sender.value * length_max):
         length_percent = sender.value
         update_view(sender.superview)
 
