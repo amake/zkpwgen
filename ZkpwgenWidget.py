@@ -69,16 +69,7 @@ def init_view():
 
 
 def generate(model):
-    hira = model.secure or bool(random.getrandbits(1))
-    kata = model.secure or not hira
-    upper = model.secure or bool(random.getrandbits(1))
-    lower = model.secure or not upper
-    return zkpwgen.generate(model.length,
-                            hira=hira,
-                            kata=kata,
-                            num=model.secure or not model.numbers,
-                            upper=upper,
-                            lower=lower)
+    return zkpwgen.generate_simple(model.length, **model)
 
 
 def can_generate(model):
