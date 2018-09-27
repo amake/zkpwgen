@@ -5,16 +5,16 @@
         "nodes" : [
 
         ],
-        "frame" : "{{19, 116}, {150, 32}}",
+        "frame" : "{{19, 96}, {150, 32}}",
         "class" : "Label",
         "attributes" : {
-          "font_size" : 18,
+          "name" : "NumbersLabel",
           "frame" : "{{85, 144}, {150, 32}}",
           "uuid" : "8018CFA9-6341-46C3-B2A8-2A193E6513EC",
           "class" : "Label",
           "alignment" : "left",
           "text" : "Numbers",
-          "name" : "NumbersLabel",
+          "font_size" : 18,
           "font_name" : "<System>"
         },
         "selected" : false
@@ -23,7 +23,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{252, 116}, {51, 31}}",
+        "frame" : "{{252, 97}, {51, 31}}",
         "class" : "Switch",
         "attributes" : {
           "action" : "set_numbers",
@@ -40,17 +40,17 @@
         "nodes" : [
 
         ],
-        "frame" : "{{19, 74}, {78, 34}}",
+        "frame" : "{{19, 54}, {78, 34}}",
         "class" : "Label",
         "attributes" : {
           "flex" : "",
-          "font_size" : 18,
+          "name" : "LengthLabel",
           "frame" : "{{85, 144}, {150, 32}}",
           "uuid" : "5DE6DDA1-4384-48C0-8B6C-ADD3164BE915",
           "class" : "Label",
           "alignment" : "left",
           "text" : "Length",
-          "name" : "LengthLabel",
+          "font_size" : 18,
           "font_name" : "<System>"
         },
         "selected" : false
@@ -59,7 +59,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{19, 156}, {150, 32}}",
+        "frame" : "{{19, 136}, {150, 32}}",
         "class" : "Label",
         "attributes" : {
           "flex" : "",
@@ -69,8 +69,8 @@
           "class" : "Label",
           "alignment" : "left",
           "text" : "Letters",
-          "font_size" : 18,
-          "name" : "LettersLabel"
+          "name" : "LettersLabel",
+          "font_size" : 18
         },
         "selected" : false
       },
@@ -78,7 +78,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{252, 155}, {51, 31}}",
+        "frame" : "{{252, 136}, {51, 31}}",
         "class" : "Switch",
         "attributes" : {
           "action" : "set_letters",
@@ -95,11 +95,11 @@
         "nodes" : [
 
         ],
-        "frame" : "{{19, 6}, {284, 60}}",
+        "frame" : "{{19, 6}, {284, 40}}",
         "class" : "TextField",
         "attributes" : {
           "flex" : "W",
-          "font_size" : 26,
+          "name" : "PasswordField",
           "frame" : "{{60, 144}, {200, 32}}",
           "spellchecking_type" : "no",
           "class" : "TextField",
@@ -107,16 +107,16 @@
           "alignment" : "center",
           "text" : "あいうえおＡＢ３",
           "autocorrection_type" : "no",
-          "name" : "PasswordField",
+          "font_size" : 26,
           "font_name" : "<System>"
         },
-        "selected" : true
+        "selected" : false
       },
       {
         "nodes" : [
 
         ],
-        "frame" : "{{125, 247}, {80, 32}}",
+        "frame" : "{{102, 217}, {100, 32}}",
         "class" : "Button",
         "attributes" : {
           "flex" : "LR",
@@ -134,17 +134,17 @@
         "nodes" : [
 
         ],
-        "frame" : "{{271, 74}, {32, 34}}",
+        "frame" : "{{271, 54}, {32, 34}}",
         "class" : "Label",
         "attributes" : {
           "flex" : "L",
-          "name" : "LengthValueLabel",
+          "font_size" : 18,
           "frame" : "{{85, 114}, {150, 32}}",
           "uuid" : "0FB5482C-4FF8-4416-973B-E1EC676D01D8",
           "class" : "Label",
           "alignment" : "right",
           "text" : "0",
-          "font_size" : 18,
+          "name" : "LengthValueLabel",
           "font_name" : "Courier"
         },
         "selected" : false
@@ -153,17 +153,17 @@
         "nodes" : [
 
         ],
-        "frame" : "{{19, 196}, {150, 32}}",
+        "frame" : "{{19, 176}, {150, 32}}",
         "class" : "Label",
         "attributes" : {
           "flex" : "",
-          "name" : "SecureLabel",
+          "font_size" : 18,
           "frame" : "{{85, 144}, {150, 32}}",
           "uuid" : "8018CFA9-6341-46C3-B2A8-2A193E6513EC",
           "class" : "Label",
           "alignment" : "left",
           "text" : "Secure",
-          "font_size" : 18,
+          "name" : "SecureLabel",
           "font_name" : "<System>"
         },
         "selected" : false
@@ -172,7 +172,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{252, 194}, {51, 31}}",
+        "frame" : "{{252, 175}, {51, 31}}",
         "class" : "Switch",
         "attributes" : {
           "action" : "set_secure",
@@ -189,16 +189,16 @@
         "nodes" : [
 
         ],
-        "frame" : "{{193, 74}, {60, 34}}",
+        "frame" : "{{193, 54}, {60, 34}}",
         "class" : "Button",
         "attributes" : {
-          "font_size" : 15,
           "action" : "increment_length",
+          "name" : "LengthUpButton",
           "frame" : "{{120, 127}, {80, 32}}",
           "title" : "",
           "uuid" : "67052E92-BEE1-45C3-881B-3A29AD1B0A97",
           "class" : "Button",
-          "name" : "LengthUpButton",
+          "font_size" : 15,
           "image_name" : "iob:ios7_plus_outline_32"
         },
         "selected" : false
@@ -207,7 +207,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{125, 74}, {60, 34}}",
+        "frame" : "{{125, 54}, {60, 34}}",
         "class" : "Button",
         "attributes" : {
           "action" : "decrement_length",
@@ -216,19 +216,19 @@
           "title" : "",
           "uuid" : "67052E92-BEE1-45C3-881B-3A29AD1B0A97",
           "class" : "Button",
-          "font_size" : 15,
-          "name" : "LengthDownButton"
+          "name" : "LengthDownButton",
+          "font_size" : 15
         },
         "selected" : false
       }
     ],
-    "frame" : "{{0, 0}, {320, 285}}",
+    "frame" : "{{0, 0}, {320, 255}}",
     "class" : "View",
     "attributes" : {
-      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
-      "enabled" : true,
-      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
       "name" : "ZkpwgenView",
+      "enabled" : true,
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
       "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
       "flex" : ""
     },
