@@ -103,7 +103,7 @@ def update_view(view, model):
         global current_model
         current_model = model
     except:
-        pass
+        update_view(view, current_model)
 
 
 def main():
