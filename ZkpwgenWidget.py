@@ -51,12 +51,12 @@ def init_view():
     return v
 
 
-def generate():
+def generate(length):
     hira = secure or bool(random.getrandbits(1))
     kata = secure or not hira
     upper = secure or bool(random.getrandbits(1))
     lower = secure or not upper
-    return zkpwgen.generate(pw_len,
+    return zkpwgen.generate(length,
                             hira=hira,
                             kata=kata,
                             num=secure or not numbers,
@@ -71,7 +71,7 @@ def update_view(view):
     view['LengthSlider'].value = length_percent
     pw_len = round(length_percent * length_max)
     view['LengthValueLabel'].value = str(pw_len)
-    pw = generate()
+    pw = generate(pw_len)
     view['PasswordField'].value = pw
     clipboard.set(pw)
 
