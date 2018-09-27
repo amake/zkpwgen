@@ -15,8 +15,10 @@ ViewModel = namedtuple('ViewModel', ['length', 'letters', 'numbers', 'secure'])
 current_model = ViewModel(8, True, True, False)
 
 
-def copy_model():
-    return ViewModel(**current_model._asdict())
+def copy_model(**kwargs):
+    curr_vals = current_model._asdict()
+    curr_vals.update(kwargs)
+    return ViewModel(**curr_vals)
 
 
 def regen(sender):
@@ -24,39 +26,37 @@ def regen(sender):
 
 
 def increment_length(sender):
-    model = copy_model()
-    model.length += 1
+    model = copy_model(length=current_model.length + 1)
     update_view(sender.superview, model)
 
 
 def decrement_length(sender):
-    model = copy_model()
-    model.length -= 1
+    model = copy_model(length=current_model.length - 1)
     update_view(sender.superview, model)
 
 
 def set_numbers(sender):
-    model = copy_model()
-    model.numbers = sender.value
-    if not model.numbers:
-        model.secure = False
+    vals = {'numbers': sender.value}
+    if not sender.value:
+        vals['secure'] = False
+    model = copy_model(**vals)
     update_view(sender.superview, model)
 
 
 def set_letters(sender):
-    model = copy_model()
-    model.letters = sender.value
-    if not model.letters:
-        model.secure = False
+    vals = {'letters': sender.value}
+    if not sender.value:
+        vals['secure'] = False
+    model = copy_model(**vals)
     update_view(sender.superview, model)
 
 
 def set_secure(sender):
-    model = copy_model()
-    model.secure = sender.value
-    if model.secure:
-        model.letters = True
-        model.numbers = True
+    vals = {'secure': sender.value}
+    if sender.value:
+        vals['letters'] = True
+        vals['numbers'] = True
+    model = copy_model(**vals)
     update_view(sender.superview, model)
 
 
