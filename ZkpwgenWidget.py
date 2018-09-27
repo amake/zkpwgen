@@ -15,8 +15,10 @@ ViewModel = namedtuple('ViewModel', ['length', 'letters', 'numbers', 'secure'])
 current_model = ViewModel(8, True, True, False)
 
 
-def copy_model(**kwargs):
-    curr_vals = current_model._asdict()
+def copy_model(model=None, **kwargs):
+    if model is None:
+        model = current_model
+    curr_vals = model._asdict()
     curr_vals.update(kwargs)
     return ViewModel(**curr_vals)
 
@@ -66,22 +68,22 @@ def init_view():
     return v
 
 
-def generate(length):
-    hira = secure or bool(random.getrandbits(1))
-    kata = secure or not hira
-    upper = secure or bool(random.getrandbits(1))
-    lower = secure or not upper
-    return zkpwgen.generate(length,
+def generate(model):
+    hira = model.secure or bool(random.getrandbits(1))
+    kata = model.secure or not hira
+    upper = model.secure or bool(random.getrandbits(1))
+    lower = model.secure or not upper
+    return zkpwgen.generate(model.length,
                             hira=hira,
                             kata=kata,
-                            num=secure or not numbers,
+                            num=model.secure or not model.numbers,
                             upper=upper,
                             lower=lower)
 
 
-def can_generate(length):
+def can_generate(model):
     try:
-        generate(length)
+        generate(model)
         return True
     except:
         return False
@@ -89,11 +91,12 @@ def can_generate(length):
 
 def update_view(view, model):
     try:
-        pw = generate(model.length)
+        pw = generate(model)
         view['NumbersSwitch'].value = model.numbers
         view['LettersSwitch'].value = model.letters
         view['SecureSwitch'].value = model.secure
-        view['LengthDownButton'].enabled = can_generate(model.length - 1)
+        view['LengthDownButton'].enabled = can_generate(
+            copy_model(model, length=model.length - 1))
         view['LengthValueLabel'].text = str(model.length)
         view['PasswordField'].text = pw
         clipboard.set(pw)
