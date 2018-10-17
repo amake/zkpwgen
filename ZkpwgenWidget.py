@@ -15,7 +15,7 @@ ViewModel = namedtuple('ViewModel', ['length', 'letters', 'numbers', 'secure'])
 
 current_model = ViewModel(8, True, True, False)
 
-settings_file = '.ZkpwgenWidget.txt'
+settings_file = '.ZkpwgenWidget.json'
 
 
 def copy_model(model=None, **kwargs):
