@@ -40,9 +40,9 @@ Invoke as :code:`zkpwgen -h` for help.
 
 Quick Install
 =============
-This package is not on PyPI, so install with::
+This package is available from PyPI::
 
-    pip install git+https://github.com/amake/zkpwgen.git
+    pip install zkwgen
 
 License
 =======
